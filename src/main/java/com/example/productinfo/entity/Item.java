@@ -3,12 +3,14 @@ package com.example.productinfo.entity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tb_item")
@@ -32,4 +34,6 @@ public class Item {
 
     @Column(nullable = false)
     private Date itemDisplayEndDate;
+
+    private Double discountPrice;
 }

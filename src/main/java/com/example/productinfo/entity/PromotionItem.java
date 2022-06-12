@@ -6,31 +6,21 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "tb_promotion")
-public class Promotion {
+@Table(name = "tb_promotion_item")
+public class PromotionItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long promotionItemId;
+
+    @Column(nullable = false)
     private Long promotionId;
 
     @Column(nullable = false)
-    private String promotionNm;
-
-    @Column
-    private Integer discountAmount;
-
-    @Column
-    private Double discountRate;
-
-    @Column(nullable = false)
-    private Date promotionStartDate;
-
-    @Column(nullable = false)
-    private Date promotionEndDate;
+    private Long itemId;
 }
