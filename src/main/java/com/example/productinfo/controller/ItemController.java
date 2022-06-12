@@ -21,13 +21,13 @@ public class ItemController {
     private final ItemService itemService;
 
     @ApiOperation(value = "프로모션 포함 상품 조회", notes = "상품에 존재하는 프로모션 정보를 조회한다.")
-    @GetMapping(value = "/item/{itemId}")
+    @GetMapping(value = "/item/{itemId}/promotion")
     public Map<String, Object> findItemWithPromotionByItemId(@ApiParam(value = "상품 아이디", required = true) @RequestHeader(value="item-id") Long itemId) {
         return itemService.findItemWithPromotionByItemId(itemId);
     }
 
     @ApiOperation(value = "사용자 구매 가능 상품 조회", notes = "사용자가 구매할 수 있는 상품 정보를 조회한다.")
-    @GetMapping(value = "/item/{userId}")
+    @GetMapping(value = "/user/{userId}/item")
     public List<Item> findItemByUserId(@ApiParam(value = "사용자 아이디", required = true) @RequestHeader(value="user-id") Long userId) {
         return itemService.findItemByUserId(userId);
     }
